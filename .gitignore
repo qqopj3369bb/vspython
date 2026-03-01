@@ -1,0 +1,36 @@
+# Python 环境
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+.Dockerfile
+.dockerignore
+docker-compose.override.yml
+
+# 本地数据 (向量库和存储的文件)
+backend/storage/
+chroma/
+
+# 敏感信息
+.env
+.env.local
+.env.*.local
+
+# 日志
+*.log
+logs/
+
+# Windows 系统文件
+Thumbs.db

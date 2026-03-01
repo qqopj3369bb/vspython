@@ -1,0 +1,20 @@
+# LLM Agent 出行路径查询工具
+基于阿里云百炼 LLM 和 MCP 协议开发的轻量级命令行 Agent，无需 LangChain 等框架，实现自然语言驱动的出行路径（步行/公交/驾车）查询功能。
+
+## 项目简介
+本项目是一个不依赖第三方 Agent 框架的极简 LLM Agent 实现，核心能力为：
+- 通过命令行接收用户自然语言输入（如「从杭州西湖到杭州东站怎么走？」）
+- 调用阿里云百炼 LLM 解析意图，提取出发地/目的地
+- 基于 MCP 协议调用路径查询工具，返回多交通方式的距离、耗时信息
+- 全程通过原生 Python + Requests 实现，无复杂框架依赖
+
+## 技术栈
+- 开发语言：Python 3.12
+- 核心依赖：`requests`（HTTP 请求）、`python-dotenv`（环境变量管理）
+- LLM 服务：阿里云百炼（DashScope）- 通义千问 Plus（qwen-plus）
+- 协议规范：MCP（Model Context Protocol）
+
+
+####  安装依赖
+```bash
+pip install requests python-dotenv
