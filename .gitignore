@@ -1,36 +1,52 @@
-# Python 环境
+# --- 敏感信息 (绝对不要上传) ---
+.env
+.env.local
+*.key
+*.pem
+
+# --- Python 缓存与编译文件 ---
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- 虚拟环境 ---
 venv/
 env/
 ENV/
+.ml_env/  # 你的 conda 环境名 (如果是在项目内的话，通常conda环境在全局，可忽略此行)
 
-# IDE
-.vscode/
+# --- IDE 配置 (可选，建议忽略个人设置) ---
+.vscode/settings.json
 .idea/
 *.swp
 *.swo
 
-# Docker
-.Dockerfile
-.dockerignore
-docker-compose.override.yml
+# --- 数据与存储 (向量数据库和本地上传文件通常很大且不需要版本控制) ---
+backend/storage/chroma_db/
+backend/storage/uploads/
+*.db
+*.sqlite3
 
-# 本地数据 (向量库和存储的文件)
-backend/storage/
-chroma/
-
-# 敏感信息
-.env
-.env.local
-.env.*.local
-
-# 日志
-*.log
-logs/
-
-# Windows 系统文件
+# --- 操作系统文件 ---
+.DS_Store
 Thumbs.db
+
+# --- 日志文件 ---
+*.log
