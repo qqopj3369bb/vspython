@@ -4,6 +4,11 @@ import requests
 import pandas as pd
 import hashlib
 
+import os  # 新增导入
+
+# 【修改点】从环境变量读取 API URL，默认值为本地开发地址
+# 在 Docker 中，docker-compose 会注入 API_URL=http://backend:8000/api
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/api")
 # 配置后端地址
 API_URL = "http://127.0.0.1:8000/api"
 
