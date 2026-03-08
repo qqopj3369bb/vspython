@@ -17,7 +17,7 @@
 - 🧠 **智能检索**：接入 SiliconFlow Qwen 大模型进行语义向量化，精准匹配用户问题。
 - 💬 **多模态对话**：基于 MiniMax 大语言模型生成流畅自然的答案。
 - 🐳 **容器化部署**：支持 Docker/Docker-compose 一键拉起前后端服务。
-- 🌍 **多平台托管**：代码已同步至 GitHub/GitLab/Gitee/Codeberg，便于团队协作。
+- 🌍 **多平台托管**：代码已同步至 GitHub/Gitee.
 
 ## 🚀 快速开始
 
@@ -114,3 +114,35 @@ MIT License
 
 ---
 **Created by ZXK | Powered by MiniMax & SiliconFlow**
+🛠 技术栈
+后端：Python 3.10 + FastAPI + Uvicorn
+前端：Streamlit
+向量库：ChromaDB
+嵌入模型：SiliconFlow API
+大模型：MiniMax API
+网络请求：httpx
+容器：Docker + docker-compose
+✨ 项目特性
+前后端分离架构：FastAPI 后端 + Streamlit 前端
+支持 TXT/MD 文档上传、自动切片、向量存储
+嵌入模型：SiliconFlow Qwen3-Embedding-4B
+大模型问答：MiniMax 大模型
+向量数据库：ChromaDB 本地持久化
+支持全文检索 / 单文档精准检索
+支持文档管理、删除、片段预览
+Docker + docker-compose 一键部署
+完整接口：上传、检索、列表、删除、健康检查
+🧠 核心功能说明
+1. 文档上传
+支持 多文件同时上传（.txt / .md）
+自动文件哈希去重
+自动文本分块、生成向量、入库
+2. 知识库问答
+支持全库检索
+支持单文档定向检索
+自动引用来源标注
+基于上下文精准回答，不编造内容
+3. 文档管理
+查看已上传文档列表、片段数量
+预览文档切片内容
+删除指定文档

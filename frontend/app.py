@@ -17,17 +17,18 @@ st.set_page_config(page_title="MiniMax RAG 知识库", layout="wide")
 st.title("🤖 MiniMax 驱动的 RAG 知识库系统")
 
 # ============ 初始化 Session State ============
+#st.session_state Streamlit 网页的记忆盒子
 if 'uploaded_files' not in st.session_state:
-    st.session_state.uploaded_files = {}  # {hash: filename}
+    st.session_state.uploaded_files = {}  # {hash: filename}，uploaded_files：记录已上传文件，去重
 if 'messages' not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = []        #messages：保存聊天记录
 if 'selected_doc_id' not in st.session_state:
-    st.session_state.selected_doc_id = None
+    st.session_state.selected_doc_id = None   #selected_doc_id：记录用户选择的文档，Streamlit 刷新页面时，数据不会丢失
 
 # ============ 辅助函数 ============
 def get_file_hash(file_bytes):
     """计算文件哈希值，用于去重"""
-    return hashlib.md5(file_bytes).hexdigest()
+    return hashlib.md5(file_bytes).hexdigest()   #相同文件哈希相同
 
 def refresh_document_list():
     """刷新文档列表"""
@@ -75,7 +76,7 @@ with st.sidebar:
         already_uploaded = []
         
         for f in uploaded_files:
-            file_hash = get_file_hash(f.getvalue())
+            file_hash = get_file_hash(f.getvalue())   ## 给文件算唯一性
             if file_hash in st.session_state.uploaded_files:
                 already_uploaded.append(f.name)
             else:
